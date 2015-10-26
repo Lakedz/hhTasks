@@ -184,10 +184,11 @@ if points:
                     #  Походит в качестве соседа?
                     if calcDistance <= distanceToNearestPoint:
                         # Да
-                        nearberhoods.append('('+str(pointsMap['points'][point]['x'])+','+str(pointsMap['points'][point]['y'])+')')
+                        nearberhoods.append(point)
             # Напишем результат
-            collect  = 'Координаты соседних от ('+str(pointsMap['points'][distance[0]]['x'])+','+str(pointsMap['points'][distance[0]]['y'])+') точек: '
-            collect += ', '.join(map(str, nearberhoods))
+            collect  = '('+str(pointsMap['points'][distance[0]]['x'])+','+str(pointsMap['points'][distance[0]]['y'])+'):'
+            collect += ' радиус - '+str(distanceToNearestPoint)
+            collect += ', количество соседей - '+str(len(nearberhoods))
             print(collect)
             # Дальше
             index += 1
