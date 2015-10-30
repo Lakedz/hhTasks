@@ -172,7 +172,7 @@ if points:
             # Поссчитаем расстояние до ближайшей точки
             distanceToNearestPoint = distanceBetweenPoints(distance[0], nearestPoint[0], pointsMap['points'], distanceBetweenPointsList)
             # Увеличим в 2 раза
-            distanceToNearestPoint *= 2;
+            distanceToNearestPoint_double = distanceToNearestPoint * 2;
             # Соседи
             nearberhoods = []
             # Пройдёмся по расстояниям до других точек
@@ -182,7 +182,7 @@ if points:
                     # Расстояние
                     calcDistance = distanceBetweenPoints(distance[0], point, pointsMap['points'], distanceBetweenPointsList)
                     #  Походит в качестве соседа?
-                    if calcDistance <= distanceToNearestPoint:
+                    if calcDistance <= distanceToNearestPoint_double:
                         # Да
                         nearberhoods.append(point)
             # Напишем результат
